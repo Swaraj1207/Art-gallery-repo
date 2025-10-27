@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { Button } from "@/components/ui/button";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 
 const About = () => {
@@ -8,6 +10,7 @@ const About = () => {
       <Navigation />
 
       <div className="container mx-auto px-4 py-12">
+        <BackButton />
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="order-2 lg:order-1">
@@ -90,11 +93,17 @@ const About = () => {
             Art is my language for expressing what words cannot capture. Through color, form, and 
             texture, I seek to create visual poetry that speaks to the human experience.
           </p>
-          <p className="font-inter text-lg text-muted-foreground leading-relaxed">
+          <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-8">
             Every painting is an exploration—a journey into the unknown where inspiration meets 
             technique. I'm driven by the desire to create work that not only beautifies spaces 
             but also enriches lives and sparks meaningful connections.
           </p>
+          <Button 
+            className="bg-foreground hover:bg-foreground/90 text-background font-inter px-8 py-6 text-base"
+            onClick={() => window.location.href = '/contact'}
+          >
+            Commission a Piece
+          </Button>
         </div>
       </div>
 

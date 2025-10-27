@@ -10,9 +10,10 @@ interface LightboxProps {
   medium: string;
   price: number;
   status: "available" | "sold";
+  year?: number;
 }
 
-const Lightbox = ({ isOpen, onClose, image, title, size, medium, price, status }: LightboxProps) => {
+const Lightbox = ({ isOpen, onClose, image, title, size, medium, price, status, year }: LightboxProps) => {
   if (!isOpen) return null;
   
   return (
@@ -49,6 +50,7 @@ const Lightbox = ({ isOpen, onClose, image, title, size, medium, price, status }
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-inter text-lg">{medium}</p>
                   <p className="font-inter text-lg">{size}</p>
+                  {year && <p className="font-inter text-lg">{year}</p>}
                 </div>
               </div>
               
@@ -60,17 +62,24 @@ const Lightbox = ({ isOpen, onClose, image, title, size, medium, price, status }
                     </p>
                     <Button 
                       className="w-full bg-foreground hover:bg-foreground/90 text-background font-inter"
-                      onClick={() => window.location.href = '/shop'}
+                      onClick={() => window.location.href = '/contact'}
                     >
-                      View in Shop
+                      Inquire to Purchase
                     </Button>
                   </>
                 ) : (
                   <div className="bg-muted/50 px-6 py-4 rounded-lg">
                     <p className="font-inter text-lg font-medium text-foreground">This piece has been sold</p>
-                    <p className="font-inter text-sm text-muted-foreground mt-2">
-                      Interested in commissioning a similar work? Contact us.
+                    <p className="font-inter text-sm text-muted-foreground mt-2 mb-3">
+                      Interested in commissioning a similar work?
                     </p>
+                    <Button 
+                      variant="outline"
+                      className="w-full font-inter border-foreground text-foreground hover:bg-foreground hover:text-background"
+                      onClick={() => window.location.href = '/contact'}
+                    >
+                      Inquire about Commissions
+                    </Button>
                   </div>
                 )}
               </div>

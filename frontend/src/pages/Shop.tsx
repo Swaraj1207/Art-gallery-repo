@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PaintingCard from "@/components/PaintingCard";
 import Lightbox from "@/components/Lightbox";
+import BackButton from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import painting1 from "@/assets/painting-1.jpg";
 import painting2 from "@/assets/painting-2.jpg";
@@ -52,6 +53,7 @@ const Shop = () => {
       <Navigation />
 
       <div className="container mx-auto px-4 py-12">
+        <BackButton />
         <div className="text-center mb-12">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-4">
             Shop Original Paintings

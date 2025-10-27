@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,6 +38,7 @@ const Contact = () => {
       <Navigation />
 
       <div className="container mx-auto px-4 py-12">
+        <BackButton />
         <div className="text-center mb-12">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get in Touch

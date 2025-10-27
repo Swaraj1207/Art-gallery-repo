@@ -3,6 +3,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PaintingCard from "@/components/PaintingCard";
 import Lightbox from "@/components/Lightbox";
+import BackButton from "@/components/BackButton";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import painting1 from "@/assets/painting-1.jpg";
 import painting2 from "@/assets/painting-2.jpg";
@@ -62,6 +64,7 @@ const Portfolio = () => {
       <Navigation />
 
       <div className="container mx-auto px-4 py-12">
+        <BackButton />
         <div className="text-center mb-16">
           <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6">
             Gallery
@@ -96,6 +99,22 @@ const Portfolio = () => {
             {renderPaintings("portrait")}
           </TabsContent>
         </Tabs>
+
+        {/* CTA Section */}
+        <div className="text-center mt-20 py-16 bg-secondary rounded-lg">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Interested in a Custom Piece?
+          </h2>
+          <p className="font-inter text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Commission a unique painting tailored to your vision and space.
+          </p>
+          <Button 
+            className="bg-foreground hover:bg-foreground/90 text-background font-inter px-8 py-6 text-base"
+            onClick={() => window.location.href = '/contact'}
+          >
+            Contact the Artist
+          </Button>
+        </div>
       </div>
 
       <Footer />
